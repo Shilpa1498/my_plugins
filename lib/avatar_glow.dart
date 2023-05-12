@@ -57,7 +57,7 @@ class AvatarGlowState extends State<AvatarGlow>
     end: 0.0,
   ).animate(_controller);
 
-  late Timer _repeatPauseTimer;
+  Timer? _repeatPauseTimer;
 
   // ignore: prefer_function_declarations_over_variables
   late final void Function(AnimationStatus status) _statusListener = (_) async {
@@ -170,7 +170,7 @@ class AvatarGlowState extends State<AvatarGlow>
 
   @override
   void dispose() {
-    _repeatPauseTimer.cancel();
+    _repeatPauseTimer?.cancel();
     _controller.dispose();
     super.dispose();
   }
