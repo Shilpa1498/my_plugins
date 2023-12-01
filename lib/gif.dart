@@ -347,7 +347,9 @@ class _GifState extends State<Gif> with SingleTickerProviderStateMixin {
 
     // Removing ! gives compile time error on Flutter 2.5.3
     // ignore: unnecessary_non_null_assertion
-    Codec codec = await PaintingBinding.instance!.instantiateImageCodec(bytes);
+    var utfData = await ImmutableBuffer.fromUint8List(bytes);
+    Codec codec =
+        await PaintingBinding.instance.instantiateImageCodecWithSize(utfData);
     List<ImageInfo> infos = [];
     Duration duration = const Duration();
 
