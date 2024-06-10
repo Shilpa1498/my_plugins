@@ -8,7 +8,7 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  fading_edge_scrollview: ^3.0.0
+  fading_edge_scrollview: ^4.1.1
   flutter:
     sdk: flutter
   rxdart: ^0.27.7
